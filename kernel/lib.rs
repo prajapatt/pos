@@ -40,7 +40,7 @@ pub mod memory {
     pub mod allocator;
     pub mod page;
     pub mod physical;
-    pub mod virtual;
+    pub mod r#virtual;
     pub mod heap;
 }
 

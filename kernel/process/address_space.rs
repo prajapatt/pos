@@ -1,5 +1,5 @@
 use crate::memory::page::{PageAddress, PageFlags};
-use crate::memory::virtual::{Mapping, MappingTable, VirtualMemoryError};
+use crate::memory::r#virtual::{Mapping, MappingTable, VirtualMemoryError};
 
 pub struct AddressSpace<const MAX_MAPPINGS: usize> { pub root: PageAddress, mappings: MappingTable<MAX_MAPPINGS> }
 impl<const MAX_MAPPINGS: usize> AddressSpace<MAX_MAPPINGS> {

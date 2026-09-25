@@ -122,7 +122,7 @@ mod tests {
         let physical_page = PageAddress::new(0x2000).unwrap();
 
         table.map(virtual_page, physical_page, PageFlags::WRITABLE).unwrap();
-        assert_eq!(table.get(virtual_page), Some(crate::memory::virtual::Mapping {
+        assert_eq!(table.get(virtual_page), Some(crate::memory::r#virtual::Mapping {
             virtual_page,
             physical_page,
             flags: PageFlags::WRITABLE.or(PageFlags::PRESENT),
