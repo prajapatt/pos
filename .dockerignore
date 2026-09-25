@@ -1,0 +1,6 @@
+target
+.git
+.github
+dist
+**/target
+**/.git

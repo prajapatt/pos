@@ -1,0 +1,8 @@
+[package]
+name = "pos-task-manager"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "pos-task-manager"
+path = "src/main.rs"

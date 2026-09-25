@@ -1,0 +1,7 @@
+[power]
+default_policy = "balanced"
+idle_timeout_seconds = 900
+suspend_enabled = false
+
+[cpu]
+governor = "ondemand"

@@ -1,0 +1,8 @@
+[package]
+name = "pos-settings"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "pos-settings"
+path = "src/main.rs"

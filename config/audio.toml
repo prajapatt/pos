@@ -1,0 +1,6 @@
+[audio]
+backend = "qemu-hda"
+sample_rate = 48000
+channels = 2
+buffer_frames = 1024
+enabled = true

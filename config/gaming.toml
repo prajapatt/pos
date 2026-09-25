@@ -1,0 +1,10 @@
+[gaming]
+enabled = true
+default_mode = "balanced"
+max_background_reduction = 0.50
+monitor_frame_time = true
+monitor_latency = true
+
+[policy]
+allow_scheduler_priority_change = true
+allow_power_policy_change = false

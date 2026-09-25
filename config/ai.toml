@@ -1,0 +1,14 @@
+[ai]
+mode = "hybrid"
+default_provider = "local"
+max_context_messages = 32
+require_verified_tool_results = true
+
+[local]
+executable_environment = "CHUT_OS_LOCAL_MODEL"
+arguments_environment = "CHUT_OS_LOCAL_MODEL_ARGS"
+
+[openrouter]
+endpoint = "https://openrouter.ai/api/v1/chat/completions"
+api_key_environment = "OPENROUTER_API_KEY"
+model_environment = "CHUT_OS_OPENROUTER_MODEL"

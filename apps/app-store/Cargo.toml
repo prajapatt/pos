@@ -1,0 +1,8 @@
+[package]
+name = "pos-app-store"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "pos-app-store"
+path = "src/main.rs"

@@ -1,0 +1,15 @@
+[package]
+name = "pos-kernel"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+path = "kernel/lib.rs"
+crate-type = ["rlib", "staticlib"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

@@ -1,0 +1,8 @@
+[package]
+name = "pos-file-manager"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "pos-file-manager"
+path = "src/main.rs"

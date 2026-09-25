@@ -1,0 +1,9 @@
+[display]
+backend = "framebuffer"
+width = 1024
+height = 768
+pixel_format = "bgrx8"
+
+[gpu]
+backend = "qemu-virtio"
+hardware_acceleration_required = false

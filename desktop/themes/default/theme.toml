@@ -1,0 +1,11 @@
+[theme]
+name = "default"
+background = "#101820"
+foreground = "#e8eef2"
+accent = "#35c4a0"
+panel = "#17252d"
+border = "#2c414b"
+
+[motion]
+enabled = true
+duration_ms = 160

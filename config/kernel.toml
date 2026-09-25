@@ -1,0 +1,14 @@
+[kernel]
+architecture = "x86_64"
+page_size = 4096
+timer_frequency_hz = 100
+max_tasks = 64
+kernel_stack_size = 16384
+
+[memory]
+identity_map_bytes = 2097152
+user_address_start = 1048576
+
+[scheduler]
+policy = "round_robin"
+time_slice_ticks = 10

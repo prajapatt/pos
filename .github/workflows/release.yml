@@ -1,0 +1,67 @@
+name: POS CI and Release
+
+on:
+    push:
+        branches: [main]
+        tags: ["v*"]
+    pull_request:
+        branches: [main]
+    workflow_dispatch:
+
+permissions:
+    contents: write
+
+jobs:
+    validate:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Install Rust toolchain
+              uses: dtolnay/rust-toolchain@stable
+              with:
+                  components: rustfmt, clippy
+                  targets: x86_64-unknown-none
+
+            - name: Cargo fmt check
+              run: cargo fmt --check
+
+            - name: Run Rust unit tests
+              run: cargo test --lib --quiet
+
+            - name: Build release artifact
+              run: cargo build --release
+
+    release:
+        needs: validate
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/'))
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Install Rust toolchain
+              uses: dtolnay/rust-toolchain@stable
+              with:
+                  targets: x86_64-unknown-none
+
+            - name: Build Docker release bundle
+              run: |
+                  docker build -t pos-release:${GITHUB_SHA} .
+                  mkdir -p dist
+                  docker run --rm -v "$PWD/dist:/out" pos-release:${GITHUB_SHA} bash -lc 'cp -a /release/artifacts/. /out/'
+                  tar -czf pos-release.tar.gz -C dist .
+
+            - name: Upload build artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: pos-release
+                  path: pos-release.tar.gz
+
+            - name: Publish GitHub release
+              uses: softprops/action-gh-release@v2
+              if: startsWith(github.ref, 'refs/tags/')
+              with:
+                  files: pos-release.tar.gz
+                  generate_release_notes: true

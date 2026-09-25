@@ -1,0 +1,11 @@
+[theme]
+name = "dark"
+background = "#080b10"
+foreground = "#f0f3f5"
+accent = "#6aa8ff"
+panel = "#111820"
+border = "#263544"
+
+[motion]
+enabled = true
+duration_ms = 140

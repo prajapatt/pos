@@ -1,0 +1,28 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 100
+BreakBeforeBraces: Linux
+PointerAlignment: Right
+AlignConsecutiveDeclarations: true
+SortIncludes: false
+NamespaceIndentation: None
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+
+Language: Cpp
+
+# POS project conventions
+AlignEscapedNewlines: Left
+SpaceAfterCStyleCast: false
+SpaceBeforeParens: ControlStatements
+
+---
+Language: C
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 100
+BreakBeforeBraces: Linux

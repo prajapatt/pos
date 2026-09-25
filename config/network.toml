@@ -1,0 +1,9 @@
+[network]
+backend = "qemu-virtio-net"
+ipv4_enabled = true
+ipv6_enabled = false
+dhcp_enabled = true
+
+[dns]
+enabled = true
+fallback_server = "1.1.1.1"

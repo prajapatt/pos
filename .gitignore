@@ -1,0 +1,44 @@
+# Build artifacts
+/target/
+**/target/
+**/*.o
+**/*.a
+**/*.so
+**/*.dylib
+**/*.dll
+**/*.exe
+**/*.bin
+**/*.img
+**/*.iso
+**/*.efi
+
+# Debug / logs
+*.log
+*.tmp
+*.bak
+*.orig
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated local state
+build/
+out/
+obj/
+dist/
+coverage/
+
+# 
+Architecture.md
+Hello.md
+
+# Rust caches
+Cargo.lock
+.cargo/
+
+# Project artifacts
+*.core
+*.stackdump

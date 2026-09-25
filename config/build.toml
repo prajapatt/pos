@@ -1,0 +1,11 @@
+[build]
+architecture = "x86_64"
+profile = "debug"
+output_directory = "build"
+boot_mode = "bios"
+image_name = "pos-bios.img"
+
+[tools]
+assembler = "nasm"
+emulator = "qemu-system-x86_64"
+python = "python"

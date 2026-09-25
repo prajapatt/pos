@@ -1,0 +1,9 @@
+[security]
+require_signed_packages = true
+allow_unsigned_boot = false
+audit_enabled = true
+ai_requires_approval_for_dangerous = true
+
+[filesystem]
+ai_root_environment = "CHUT_OS_FILESYSTEM_ROOT"
+allow_parent_traversal = false
